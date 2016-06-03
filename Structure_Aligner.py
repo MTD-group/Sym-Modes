@@ -109,7 +109,7 @@ pp = pprint.PrettyPrinter()
 
 # In[19]:
 
-from pymatgen.io.vasp import Poscar
+from pymatgen.io.vaspio import Poscar
 
 intervals = 10 
 increment = 1.0 / intervals
@@ -151,7 +151,8 @@ if numberomodes == 2:
 
             for atom in range(0, len(subby)):
                 for coord in range(0, 3):
-                    subs[atom][coord] = subby[atom][coord] * interval * increment +                                         subby2[atom][coord] * interval2 * increment + nm_coords[atom][coord]
+                    subs[atom][coord] = subby[atom][coord] * interval * increment + subby2[atom][coord] \
+                    * interval2 * increment + nm_coords[atom][coord]
 
             # Add displacement to zero modes structure
             index = range(0, len(species))
@@ -174,7 +175,8 @@ if numberomodes == 3:
 
                 for atom in range(0, len(subby)):
                     for coord in range(0, 3):
-                        subs[atom][coord] = subby[atom][coord] * interval * increment +                                             subby2[atom][coord] * interval2 * increment +                                             subby3[atom][coord] * interval3 * increment + nm_coords[atom][coord]
+                        subs[atom][coord] = subby[atom][coord] * interval * increment + subby2[atom][coord] \
+                        * interval2 * increment + subby3[atom][coord] * interval3 * increment + nm_coords[atom][coord]
 
                 # Add displacement to zero modes structure
                 index = range(0, len(species))
@@ -186,7 +188,8 @@ if numberomodes == 3:
                 value = increment*100*interval
                 value2 = increment*100*interval2
                 value3 = increment*100*interval3
-                struct.write_file("%s_%s%%_%s_%s%%_%s_%s%%.vasp" % (mode3_filename, value3,                                                             mode2_filename, value2, mode_filename, value))    
+                struct.write_file("%s_%s%%_%s_%s%%_%s_%s%%.vasp" % (mode3_filename, value3, mode2_filename, value2, \
+                mode_filename, value))    
     
     
     
