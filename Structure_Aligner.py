@@ -1,4 +1,6 @@
-
+# A script for generating intermediate structures between a high symmetry aristotype and a lower symmetry hettotype for 
+# the purposes of Landau expansions or distortion visualization
+# Author: Nicholas Wagner
 # coding: utf-8
 
 # In[16]:
