@@ -1,0 +1,6 @@
+# For core functionality
+pymatgen=4.5.2
+# For GUI mode
+Tkinter
+tkFileDialog
+tkSimpleDialog
