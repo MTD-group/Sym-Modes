@@ -4,9 +4,7 @@
 # In[1]:
 
 from pymatgen.core import Structure
-import Tkinter as tk
-import tkFileDialog
-import tkSimpleDialog
+
 
 while True:
     try:
@@ -21,6 +19,9 @@ while True:
 
 # Read in cif files for structures without and with modes
 if guimode.lower() == 'yes' or guimode.lower() == 'y':
+    import Tkinter as tk
+    import tkFileDialog
+    import tkSimpleDialog
     print("Please provide parent structure cif with no modes: ")
     file_path = tkFileDialog.askopenfilename(title="parent structure cif")
     no_modes = Structure.from_file(file_path)
