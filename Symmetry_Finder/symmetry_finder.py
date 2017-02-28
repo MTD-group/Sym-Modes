@@ -25,6 +25,7 @@ elif os.path.isfile('cif_files.txt'): # For a list of cif filenames, will write 
 else: # If you just want the symmetrized cif for one POSCAR
     p = Poscar.from_file('POSCAR')
     z = CifWriter(p.structure, symprec=0.001)
-    your_name = raw_input('Please provide your cif name without .cif: ')
+    with open('POSCAR') as f:
+        your_name = f.readline().split()[0]
     z.write_file(your_name + '.cif')
 
